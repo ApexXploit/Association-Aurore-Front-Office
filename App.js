@@ -15,6 +15,7 @@ import {
   View,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import * as NavigationBar from "expo-navigation-bar";
 import { Ionicons } from "@expo/vector-icons";
 import UpdateScreen from "./src/UpdateScreen";
 import { checkForUpdate } from "./src/updateService";
@@ -990,6 +991,20 @@ export default function App() {
       clearTimeout(timer);
       sub.remove();
     };
+  }, []);
+  useEffect(() => {
+    if (Platform.OS !== "android") return;
+    const hideSystemNavigation = async () => {
+      try {
+        await NavigationBar.setBehaviorAsync("overlay-swipe");
+        await NavigationBar.setVisibilityAsync("hidden");
+      } catch (_) {}
+    };
+    hideSystemNavigation();
+    const sub = AppState.addEventListener("change", (state) => {
+      if (state === "active") hideSystemNavigation();
+    });
+    return () => sub.remove();
   }, []);
   const content = {
     splash: <Splash go={go} />,
