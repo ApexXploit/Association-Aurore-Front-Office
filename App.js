@@ -53,6 +53,7 @@ const procedures = [
     "20 min",
     "4 étapes",
     "heart-outline",
+    "#137A45",
     "#E3F4ED",
   ],
   [
@@ -61,6 +62,7 @@ const procedures = [
     "1 h",
     "5 étapes",
     "business-outline",
+    "#6941C6",
     "#F0EAFE",
   ],
   [
@@ -69,6 +71,7 @@ const procedures = [
     "30 min",
     "4 étapes",
     "school-outline",
+    "#287A3D",
     "#E8F2E9",
   ],
   [
@@ -77,6 +80,7 @@ const procedures = [
     "30 min",
     "4 étapes",
     "briefcase-outline",
+    "#1E7A46",
     "#E6F4EB",
   ],
   [
@@ -85,6 +89,7 @@ const procedures = [
     "30 min",
     "5 étapes",
     "card-outline",
+    "#4A40B8",
     "#ECEAFF",
   ],
   [
@@ -93,6 +98,7 @@ const procedures = [
     "Variable",
     "6 étapes",
     "home-outline",
+    "#C24608",
     "#FFF0E7",
   ],
   [
@@ -101,6 +107,7 @@ const procedures = [
     "25 min",
     "5 étapes",
     "wallet-outline",
+    "#A35B00",
     "#FFF3D8",
   ],
   [
@@ -109,6 +116,7 @@ const procedures = [
     "45 min",
     "6 étapes",
     "document-text-outline",
+    "#315FC4",
     "#EAF0FF",
   ],
   [
@@ -117,6 +125,7 @@ const procedures = [
     "30 min",
     "5 étapes",
     "medkit-outline",
+    "#167A43",
     "#E4F6EA",
   ],
   [
@@ -125,6 +134,7 @@ const procedures = [
     "20 min",
     "4 étapes",
     "restaurant-outline",
+    "#7437B8",
     "#F3EAFE",
   ],
 ];
@@ -745,7 +755,10 @@ function Activities({ go }) {
           </View>
           <View style={s.activityBody}>
             <View style={s.activityTitleRow}>
-              <Text style={s.rowTitle}>{c[0]}</Text>
+              <View style={[s.activityPictogram, { backgroundColor: i ? "#F0EAFE" : "#E5F5E9" }]}>
+                <Ionicons name={i ? "library-outline" : "walk-outline"} size={21} color={i ? "#6D35B5" : "#177A3D"} />
+              </View>
+              <Text style={[s.rowTitle, { flex: 1 }]}>{c[0]}</Text>
               <View style={s.infoBadge}>
                 <Text style={s.infoBadgeText}>i</Text>
               </View>
@@ -1397,7 +1410,17 @@ const s = StyleSheet.create({
   activityTitleRow: {
     flexDirection: "row",
     alignItems: "center",
+    gap: 9,
     justifyContent: "space-between",
+  },
+  activityPictogram: {
+    width: 38,
+    height: 38,
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: "#00000012",
   },
   infoBadge: {
     width: 19,
