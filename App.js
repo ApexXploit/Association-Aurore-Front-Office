@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   AppState,
+  BackHandler,
   Image,
   Linking,
   Platform,
@@ -982,10 +983,29 @@ export default function App() {
       : null;
   const [screen, setScreen] = useState(preview || "splash");
   const [selectedProcedure, setSelectedProcedure] = useState(procedures[0]);
+  const screenRef = useRef(preview || "splash");
+  const historyRef = useRef([]);
   const go = (x, data) => {
     if (x === "procedureDetail" && data) setSelectedProcedure(data);
+    if (x === screenRef.current) return;
+    const history = historyRef.current;
+    if (history[history.length - 1] === x) history.pop();
+    else history.push(screenRef.current);
+    screenRef.current = x;
     setScreen(x);
   };
+  useEffect(() => {
+    if (Platform.OS !== "android") return;
+    const sub = BackHandler.addEventListener("hardwareBackPress", () => {
+      const previous = historyRef.current.pop();
+      if (previous) {
+        screenRef.current = previous;
+        setScreen(previous);
+      }
+      return true;
+    });
+    return () => sub.remove();
+  }, []);
   useEffect(() => {
     let mounted = true;
     const safeCheck = () =>
