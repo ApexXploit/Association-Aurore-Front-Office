@@ -1,10 +1,14 @@
 # Le Carré Connect — Front-office
 
+<p align="center">
+  <img src="assets/icon-front.png" alt="Logo Le Carré Connect" width="180" />
+</p>
+
 Application Android de l'Association Aurore destinée aux bénéficiaires.
 
 ## Télécharger l'APK
 
-[Télécharger la dernière version Android](https://github.com/ApexXploit/Association-Aurore-Front-Office/releases/latest/download/Le-Carre-Connect-v2.1.0.apk)
+[Télécharger la dernière version Android](https://github.com/ApexXploit/Association-Aurore-Front-Office/releases/latest/download/Le-Carre-Connect-v2.1.1.apk)
 
 L'APK s'installe directement sur Android. Il ne nécessite pas Expo Go.
 
