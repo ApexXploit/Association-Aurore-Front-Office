@@ -24,6 +24,10 @@ const procedures=[
   ["S'inscrire à Pôle Emploi","Facile","30 min","4 étapes","briefcase-outline","#E6F4EB"],
   ["Obtenir une carte d'identité","Facile","30 min","5 étapes","card-outline","#ECEAFF"],
   ["Trouver un logement","Complexe","Variable","6 étapes","home-outline","#FFF0E7"],
+  ["Demander les aides de la CAF","Finance","25 min","5 étapes","wallet-outline","#FFF3D8"],
+  ["Renouveler un titre de séjour","Identité","45 min","6 étapes","document-text-outline","#EAF0FF"],
+  ["Demander la complémentaire santé solidaire","Santé","30 min","5 étapes","medkit-outline","#E4F6EA"],
+  ["Inscrire un enfant à la cantine","Éducation","20 min","4 étapes","restaurant-outline","#F3EAFE"],
 ];
 
 function Logo(){return <View style={s.logoWrap}><Text style={s.stars}>✦ ✦ ✦</Text><Text style={s.logo}>Aurore</Text><Text style={s.logoSub}>A S S O C I A T I O N</Text></View>}
