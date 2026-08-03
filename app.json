@@ -7,6 +7,7 @@
     "userInterfaceStyle": "light",
     "android": {
       "package": "fr.associationaurore.frontoffice",
+      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#FF5A0A"
       }

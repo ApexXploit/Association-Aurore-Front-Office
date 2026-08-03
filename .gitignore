@@ -2,6 +2,8 @@ node_modules/
 .expo/
 dist/
 dist-*/
+android/
+*.apk
 .DS_Store
 npm-debug.log*
 *.jks
