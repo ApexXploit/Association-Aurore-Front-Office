@@ -8,7 +8,7 @@ const DISMISSED_VERSION_KEY = "aurore_update_dismissed_version";
 let runningCheck = null;
 
 export function currentVersion() {
-  return Application.nativeApplicationVersion || "2.0.0";
+  return Application.nativeApplicationVersion || "2.0.1";
 }
 
 export function compareVersions(left, right) {
@@ -107,4 +107,3 @@ export async function openUpdate(result) {
   await Linking.openURL(url);
   return true;
 }
-

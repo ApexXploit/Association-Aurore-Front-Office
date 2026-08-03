@@ -4,7 +4,7 @@ Application Android de l'Association Aurore destinée aux bénéficiaires.
 
 ## Télécharger l'APK
 
-[Télécharger la dernière version Android](https://github.com/ApexXploit/Association-Aurore-Front-Office/releases/latest/download/Le-Carre-Connect-v2.0.0.apk)
+[Télécharger la dernière version Android](https://github.com/ApexXploit/Association-Aurore-Front-Office/releases/latest/download/Le-Carre-Connect-v2.0.1.apk)
 
 L'APK s'installe directement sur Android. Il ne nécessite pas Expo Go.
 

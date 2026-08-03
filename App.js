@@ -57,7 +57,15 @@ export default function App(){
  const preview=Platform.OS==="web"&&typeof window!=="undefined"?new URLSearchParams(window.location.search).get("screen"):null;
  const [screen,setScreen]=useState(preview||"splash");
  const go=x=>setScreen(x);
- useEffect(()=>{checkForUpdate().then(result=>{if(result?.status==="available"&&!result.dismissed)setScreen("update")});const sub=AppState.addEventListener("change",state=>{if(state==="active")checkForUpdate()});return()=>sub.remove()},[]);
+ useEffect(()=>{
+   let mounted=true;
+   const safeCheck=()=>checkForUpdate()
+     .then(result=>{if(mounted&&result?.status==="available"&&!result.dismissed)setScreen("update")})
+     .catch(()=>null);
+   const timer=setTimeout(safeCheck,2500);
+   const sub=AppState.addEventListener("change",state=>{if(state==="active")safeCheck()});
+   return()=>{mounted=false;clearTimeout(timer);sub.remove()};
+ },[]);
  const content={splash:<Splash go={go}/>,language:<Language go={go}/>,signup:<Signup go={go}/>,login:<Login go={go}/>,home:<Home go={go}/>,emergency:<Emergency go={go}/>,transport:<Transport go={go}/>,procedures:<Procedures go={go}/>,procedureDetail:<ProcedureDetail go={go}/>,voice:<Voice go={go}/>,translation:<Translation go={go}/>,activities:<Activities go={go}/>,messages:<Messages go={go}/>,conversation:<Conversation go={go}/>,map:<MapScreen go={go}/>,profile:<Profile go={go}/>,update:<UpdateScreen onBack={()=>go("profile")}/>}[screen]||<Home go={go}/>;
  const tabScreens=["home","map","messages","activities","profile"];
  return <SafeAreaView style={s.safe}><StatusBar style="dark"/><View style={{flex:1}}>{content}</View>{tabScreens.includes(screen)&&<BottomNav active={screen} go={go}/>}{!["splash","language","signup","login","voice","conversation","update"].includes(screen)&&<Mic go={go}/>}</SafeAreaView>
