@@ -2,13 +2,13 @@
   "expo": {
     "name": "Le Carré Connect V2",
     "slug": "aurore-carre-connect-v2",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "newArchEnabled": false,
     "android": {
       "package": "fr.associationaurore.frontoffice",
-      "versionCode": 2,
+      "versionCode": 3,
       "adaptiveIcon": {
         "backgroundColor": "#FF5A0A"
       }
