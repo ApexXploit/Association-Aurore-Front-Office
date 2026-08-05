@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import Ionicons from "react-native-vector-icons/Ionicons";
 import {
   checkForUpdate,
   currentVersion,
@@ -167,4 +167,3 @@ const styles = StyleSheet.create({
   checkButton: { height: 48, borderRadius: 11, borderWidth: 1, borderColor: LINE, flexDirection: "row", gap: 8, alignItems: "center", justifyContent: "center", marginTop: 16 },
   checkText: { color: ORANGE, fontSize: 11, fontWeight: "800" },
 });
-

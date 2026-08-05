@@ -8,9 +8,9 @@ Application Android de l'Association Aurore destinée aux bénéficiaires.
 
 ## Télécharger l'APK
 
-[Télécharger la dernière version Android](https://github.com/ApexXploit/Association-Aurore-Front-Office/releases/latest/download/Le-Carre-Connect-v2.1.4.apk)
+[Télécharger la dernière version Android](https://github.com/ApexXploit/Association-Aurore-Front-Office/releases/latest/download/Le-Carre-Connect-v2.2.0.apk)
 
-L'APK s'installe directement sur Android. Il ne nécessite pas Expo Go.
+L'APK s'installe directement sur Android.
 
 ## Fonctions principales
 
@@ -25,15 +25,16 @@ L'APK s'installe directement sur Android. Il ne nécessite pas Expo Go.
 
 ```bash
 npm install
-npx expo start --clear
+npm start
+npm run android
 ```
 
-Le projet utilise Expo SDK 54 et fonctionne avec Expo Go 54 pour les tests.
+Le projet utilise React Native Android natif et s'ouvre directement dans Android Studio via le dossier `android`.
 
 ## Validation Android
 
 ```bash
-npx expo export --platform android
+npm run build:android
 ```
 
 Consultez `MISES_A_JOUR.md` pour publier une nouvelle version Android.

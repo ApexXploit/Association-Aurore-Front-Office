@@ -1,5 +1,4 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import * as Application from "expo-application";
 import { Linking, Platform } from "react-native";
 import { UPDATE_CONFIG } from "./updateConfig";
 
@@ -8,7 +7,7 @@ const DISMISSED_VERSION_KEY = "aurore_update_dismissed_version";
 let runningCheck = null;
 
 export function currentVersion() {
-  return Application.nativeApplicationVersion || "2.1.0";
+  return "2.2.0";
 }
 
 export function compareVersions(left, right) {

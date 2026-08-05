@@ -25,7 +25,7 @@ Le système sera pleinement actif dès que ce dépôt existera avec une Release.
 
 ## Publier une nouvelle version
 
-1. Modifier la version dans `app.json`, par exemple `2.1.0`.
+1. Modifier `versionName` et `versionCode` dans `android/app/build.gradle`.
 2. Construire un APK Android signé.
 3. Créer un tag GitHub correspondant, par exemple `v2.1.0`.
 4. Créer une Release à partir de ce tag.
@@ -35,8 +35,7 @@ Le système sera pleinement actif dès que ce dépôt existera avec une Release.
 Au prochain démarrage ou retour dans l’application, la nouvelle version sera
 détectée et proposée à l’utilisateur.
 
-## Limite d’Expo Go
+## Application Android native
 
-Expo Go permet de tester l’interface, mais ne peut pas remplacer sa propre
-application par l’APK Aurore. Le téléchargement et l’installation concernent
-la version Android autonome et signée de **Le Carré Connect**.
+Le téléchargement et l’installation concernent directement l’APK Android
+autonome et signé de **Le Carré Connect**.
